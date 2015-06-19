@@ -1,0 +1,60 @@
+{
+  "server": {{ consul_server|to_json }},
+  "bootstrap_expect": {{ consul_bootstrap_expect|to_json }},
+
+  {% if consul_web_ui %}
+  "ui_dir": "/usr/local/share/consul/dist",
+  {% endif %}
+
+  "ca_file": {{ consul_ca_file|to_json }},
+  "cert_file": {{ consul_cert_file|to_json }},
+  "key_file": {{ consul_key_file|to_json }},
+  "verify_incoming": {{ consul_verify_incoming|to_json }},
+  "verify_outgoing": {{ consul_verify_outgoing|to_json }},
+  "verify_server_hostname": {{ consul_verify_server_hostname|to_json }},
+
+  "datacenter": {{ consul_dc|to_json }},
+  "domain": {{ consul_domain|to_json }},
+  "node_name": {{ consul_node_name|to_json }},
+
+  "data_dir": "/var/lib/consul",
+  "log_level": {{ consul_log_level|to_json }},
+
+  "bind_addr": {{ consul_bind_address|to_json }},
+  "client_addr": {{ consul_client_address|to_json }},
+  "advertise_addr": {{ consul_advertise_address|to_json }},
+  "advertise_addr_wan": {{ consul_advertise_address_wan|to_json }},
+
+  "retry_join": {{ consul_retry_join|to_json }},
+  "retry_max": {{ consul_retry_max|to_json }},
+  "retry_interval": {{ consul_retry_interval|to_json }},
+
+  "retry_join_wan": {{ consul_retry_join_wan|to_json }},
+  "retry_max_wan": {{ consul_retry_max_wan|to_json }},
+  "retry_interval_wan": {{ consul_retry_interval_wan|to_json }},
+
+  "acl_datacenter": {{ consul_acl_dc|to_json }},
+  "acl_default_policy": {{ consul_acl_default_policy|to_json }},
+  "acl_down_policy": {{ consul_acl_down_policy|to_json }},
+  "acl_master_token": {{ consul_acl_master_token|to_json }},
+  "acl_token": {{ consul_acl_token|to_json }},
+  "acl_ttl": {{ consul_acl_ttl|to_json }},
+
+  "encrypt": {{ consul_encrypt|to_json }},
+
+  "atlas_acl_token": {{ consul_atlas_acl_token|to_json }},
+  "atlas_infrastructure": {{ consul_atlas_infra|to_json }},
+  "atlas_join": {{ consul_atlas_join|to_json }},
+  "atlas_token": {{ consul_atlas_token|to_json }},
+
+  "dns_config": {{ consul_dns_config|to_json }},
+  
+  "http_api_response_headers": {{ consul_http_api_response_headers|to_json }},
+
+  "leave_on_terminate": {{ consul_leave_on_terminate|to_json }},
+  "skip_leave_on_interrupt": {{ consul_skip_leave_on_interrupt|to_json }},
+  "rejoin_after_leave": {{ consul_rejoin_after_leave|to_json }},
+
+  "statsite_addr": {{ consul_statsite_address|to_json }},
+  "statsite_prefix": {{ consul_statsite_prefix|to_json }}
+}

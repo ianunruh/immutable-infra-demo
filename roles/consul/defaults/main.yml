@@ -1,0 +1,58 @@
+consul_archive_url: https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
+consul_ui_archive_url: https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip
+
+consul_server: false
+consul_bootstrap_expect: null
+
+consul_web_ui: false
+
+consul_ca_file: null
+consul_cert_file: null
+consul_key_file: null
+consul_verify_incoming: null
+consul_verify_outgoing: null
+consul_verify_server_hostname: null
+
+consul_dc: null
+consul_domain: null
+consul_node_name: null
+
+consul_log_level: info
+
+consul_bind_address: null
+consul_client_address: null
+consul_advertise_address: null
+consul_advertise_address_wan: null
+
+consul_retry_join: null
+consul_retry_max: null
+consul_retry_interval: null
+
+consul_retry_join_wan: null
+consul_retry_max_wan: null
+consul_retry_interval_wan: null
+
+consul_acl_dc: null
+consul_acl_default_policy: null
+consul_acl_down_policy: null
+consul_acl_master_token: null
+consul_acl_token: null
+consul_acl_ttl: null
+
+consul_encrypt: null
+
+consul_atlas_acl_token: null
+consul_atlas_infra: null
+consul_atlas_join: false
+consul_atlas_token: null
+
+consul_dns_config: null
+
+consul_http_api_response_headers: null
+
+consul_leave_on_terminate: null
+consul_skip_leave_on_interrupt: null
+consul_rejoin_after_leave: null
+
+consul_statsite_address: null
+consul_statsite_prefix: null

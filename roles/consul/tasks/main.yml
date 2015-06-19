@@ -1,0 +1,17 @@
+- include: install.yml
+  tags:
+    - install
+
+- include: install_ui.yml
+  when: consul_web_ui
+  tags:
+    - install
+
+- name: configure agent
+  template: src=agent.json.j2 dest=/etc/consul/conf.d/00-agent.json
+  notify:
+    - restart consul
+  tags:
+    - configure
+
+- meta: flush_handlers

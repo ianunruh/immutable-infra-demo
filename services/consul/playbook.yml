@@ -1,0 +1,10 @@
+- hosts: localhost
+  pre_tasks:
+    - name: gather ec2 facts
+      action: ec2_facts
+      tags:
+        - always
+  roles:
+    - common
+    - consul
+    - dnsmasq

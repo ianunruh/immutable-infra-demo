@@ -1,0 +1,12 @@
+- name: download consul ui
+  get_url: >
+    url={{ consul_ui_archive_url }}
+    dest=/usr/local/src/consul_web_ui.zip
+
+- name: ensure ui directory
+  file: path=/usr/local/share/consul state=directory
+
+- name: install consul ui
+  command: unzip -o /usr/local/src/consul_web_ui.zip -d /usr/local/share/consul
+  args:
+    creates: /usr/local/share/consul/dist

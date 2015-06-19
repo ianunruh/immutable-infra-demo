@@ -1,0 +1,8 @@
+consul_server: true
+
+consul_web_ui: true
+
+consul_dc: "{{ ansible_ec2_placement_region }}"
+consul_node_name: "{{ ansible_ec2_instance_id }}"
+
+consul_bind_address: 0.0.0.0

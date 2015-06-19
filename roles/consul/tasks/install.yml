@@ -1,0 +1,24 @@
+- name: download consul
+  get_url: >
+    url={{ consul_archive_url }}
+    dest=/usr/local/src/consul.zip
+
+- name: install consul
+  command: unzip -o /usr/local/src/consul.zip -d /usr/local/bin
+  args:
+    creates: /usr/local/bin/consul
+
+- name: ensure user
+  user: name=consul home=/var/lib/consul shell=/bin/false createhome=no
+
+- name: ensure config directory
+  file: path=/etc/consul/conf.d state=directory
+
+- name: ensure state directories
+  file: path={{ item }} owner=consul group=consul state=directory
+  with_items:
+    - /var/lib/consul
+    - /var/log/consul
+
+- name: copy upstart script
+  copy: src=consul.conf dest=/etc/init/consul.conf
