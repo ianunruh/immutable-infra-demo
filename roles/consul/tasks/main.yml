@@ -14,4 +14,12 @@
   tags:
     - configure
 
+- name: configure dnsmasq
+  template: src=dnsmasq.conf.j2 dest=/etc/dnsmasq.d/10-consul
+  notify:
+    - restart dnsmasq
+  when: consul_configure_dnsmasq
+  tags:
+    - configure
+
 - meta: flush_handlers

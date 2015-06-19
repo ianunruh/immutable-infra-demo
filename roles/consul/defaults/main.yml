@@ -14,13 +14,13 @@ consul_verify_outgoing: null
 consul_verify_server_hostname: null
 
 consul_dc: null
-consul_domain: null
+consul_domain: consul
 consul_node_name: null
 
 consul_log_level: info
 
 consul_bind_address: null
-consul_client_address: null
+consul_client_address: 127.0.0.1
 consul_advertise_address: null
 consul_advertise_address_wan: null
 
@@ -56,3 +56,5 @@ consul_rejoin_after_leave: null
 
 consul_statsite_address: null
 consul_statsite_prefix: null
+
+consul_configure_dnsmasq: false
