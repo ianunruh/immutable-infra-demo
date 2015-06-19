@@ -6,3 +6,12 @@ consul_dc: "{{ ansible_ec2_placement_region }}"
 consul_node_name: "{{ ansible_ec2_instance_id }}"
 
 consul_bind_address: 0.0.0.0
+
+consul_domain: consul.example.com
+
+consul_bootstrap_expect: 3
+
+consul_retry_join:
+  - consul-bootstrap.example.com
+
+consul_configure_dnsmasq: true
