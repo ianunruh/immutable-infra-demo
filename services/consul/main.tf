@@ -93,7 +93,7 @@ resource "aws_security_group" "allow_ssh_public" {
 
 resource "aws_instance" "bastion" {
   ami = "${var.bastion_ami}"
-  instance_type = "t1.micro"
+  instance_type = "t2.micro"
   key_name = "${var.key_name}"
   
   subnet_id = "${aws_subnet.main.id}"
@@ -104,7 +104,7 @@ resource "aws_instance" "bastion" {
 
 resource "aws_instance" "consul" {
   ami = "${var.consul_ami}"
-  instance_type = "t1.micro"
+  instance_type = "t2.micro"
   key_name = "${var.key_name}"
 
   subnet_id = "${aws_subnet.main.id}"
