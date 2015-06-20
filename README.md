@@ -16,16 +16,22 @@ The following components were used when developing and testing this demo:
 
 ```bash
 git clone https://github.com/ianunruh/immutable-infra-demo.git
-cd immutable-infra-demo/services/consul
+cd immutable-infra-demo
+
+BASE_PATH=$(pwd)
 
 # Export AWS credentials and region
 export AWS_ACCESS_KEY_ID=XXX
 export AWS_SECRET_ACCESS_KEY=YYY
 
 # Build the Consul AMI
+cd $BASE_PATH/packer/consul
+
 packer build packer.json
 
 # Configure Terraform
+cd $BASE_PATH/terraform/full
+
 cat <<EOF | tee terraform.tfvars
 consul_ami = "ami-ZZZ"
 key_name = "WWW"
